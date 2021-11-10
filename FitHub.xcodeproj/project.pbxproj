@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,12 @@
 		E1ED17032738E7FC00BD8980 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ED17022738E7FC00BD8980 /* LoginView.swift */; };
 		E1ED17052738E80D00BD8980 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1ED17042738E80D00BD8980 /* Assets.xcassets */; };
 		E1ED17082738E80E00BD8980 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1ED17072738E80E00BD8980 /* Preview Assets.xcassets */; };
+		E1ED1731273B66F500BD8980 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ED1730273B66F400BD8980 /* UserModel.swift */; };
+		E1ED1733273B7DC000BD8980 /* FitHubViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ED1732273B7DC000BD8980 /* FitHubViewModel.swift */; };
+		E1ED1788273BA5C000BD8980 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = E1ED1787273BA5C000BD8980 /* FirebaseFirestore */; };
+		E1ED178A273BA5C000BD8980 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = E1ED1789273BA5C000BD8980 /* FirebaseFirestoreSwift-Beta */; };
+		E1ED178C273BA67A00BD8980 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1ED178B273BA67A00BD8980 /* GoogleService-Info.plist */; };
+		E1ED178E273BAC4600BD8980 /* FitHubRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ED178D273BAC4600BD8980 /* FitHubRepo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +26,10 @@
 		E1ED17042738E80D00BD8980 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1ED17072738E80E00BD8980 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E1ED17092738E80E00BD8980 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1ED1730273B66F400BD8980 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		E1ED1732273B7DC000BD8980 /* FitHubViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitHubViewModel.swift; sourceTree = "<group>"; };
+		E1ED178B273BA67A00BD8980 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E1ED178D273BAC4600BD8980 /* FitHubRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitHubRepo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +37,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1ED1788273BA5C000BD8980 /* FirebaseFirestore in Frameworks */,
+				E1ED178A273BA5C000BD8980 /* FirebaseFirestoreSwift-Beta in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,9 +66,13 @@
 			children = (
 				E1ED17002738E7FC00BD8980 /* FitHubApp.swift */,
 				E1ED17022738E7FC00BD8980 /* LoginView.swift */,
+				E1ED1730273B66F400BD8980 /* UserModel.swift */,
+				E1ED178B273BA67A00BD8980 /* GoogleService-Info.plist */,
+				E1ED1732273B7DC000BD8980 /* FitHubViewModel.swift */,
 				E1ED17042738E80D00BD8980 /* Assets.xcassets */,
 				E1ED17092738E80E00BD8980 /* Info.plist */,
 				E1ED17062738E80E00BD8980 /* Preview Content */,
+				E1ED178D273BAC4600BD8980 /* FitHubRepo.swift */,
 			);
 			path = FitHub;
 			sourceTree = "<group>";
@@ -85,6 +101,10 @@
 			dependencies = (
 			);
 			name = FitHub;
+			packageProductDependencies = (
+				E1ED1787273BA5C000BD8980 /* FirebaseFirestore */,
+				E1ED1789273BA5C000BD8980 /* FirebaseFirestoreSwift-Beta */,
+			);
 			productName = FitHub;
 			productReference = E1ED16FD2738E7FC00BD8980 /* FitHub.app */;
 			productType = "com.apple.product-type.application";
@@ -112,6 +132,9 @@
 				Base,
 			);
 			mainGroup = E1ED16F42738E7FC00BD8980;
+			packageReferences = (
+				E1ED1786273BA5C000BD8980 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = E1ED16FE2738E7FC00BD8980 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,6 +149,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1ED178C273BA67A00BD8980 /* GoogleService-Info.plist in Resources */,
 				E1ED17082738E80E00BD8980 /* Preview Assets.xcassets in Resources */,
 				E1ED17052738E80D00BD8980 /* Assets.xcassets in Resources */,
 			);
@@ -139,6 +163,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1ED17032738E7FC00BD8980 /* LoginView.swift in Sources */,
+				E1ED178E273BAC4600BD8980 /* FitHubRepo.swift in Sources */,
+				E1ED1731273B66F500BD8980 /* UserModel.swift in Sources */,
+				E1ED1733273B7DC000BD8980 /* FitHubViewModel.swift in Sources */,
 				E1ED17012738E7FC00BD8980 /* FitHubApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,6 +353,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E1ED1786273BA5C000BD8980 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E1ED1787273BA5C000BD8980 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E1ED1786273BA5C000BD8980 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		E1ED1789273BA5C000BD8980 /* FirebaseFirestoreSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E1ED1786273BA5C000BD8980 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreSwift-Beta";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E1ED16F52738E7FC00BD8980 /* Project object */;
 }

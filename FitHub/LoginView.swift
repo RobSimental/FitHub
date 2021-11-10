@@ -8,23 +8,31 @@
 import SwiftUI
 
 struct LoginView: View {
+    @ObservedObject var fitHubViewModel: FitHubViewModel
+
+    
     let lightPurple = Color(red: 76/255, green: 76/255, blue: 109/255, opacity: 1)
     
     @State private var email: String = ""
     @State private var password: String = ""
-    
+    @State private var isLoggedIn: Bool = false
     var body: some View {
-        ZStack {
-            //background image
-            Image("partner").resizable().ignoresSafeArea()
+        if(!isLoggedIn) {
             
-            VStack {
-                fithubLogo
-                Spacer()
-                welcomeText
-                inputFields
-            }
+            ZStack {
+                //background image
+                Image("partner").resizable().ignoresSafeArea()
+                
+                VStack {
+                    fithubLogo
+                    Spacer()
+                    welcomeText
+                    inputFields
+                }
 
+            }
+        } else {
+            
         }
     }
     var fithubLogo: some View {
@@ -58,10 +66,10 @@ struct LoginView: View {
                 .padding(.bottom,20)
                 .opacity(0.9)
             
-            Button(action: {print("login pressed")}){
+            Button(action: {fitHubViewModel.login(email: "rob", password: password)}){
                 loginButtonText
             }
-            Button (action: {print("register pressed")}) {
+            Button (action: {fitHubViewModel.register(email: "rob@mail", username: "rob", password: "pass", interests: ["Weight Lifting"])}) {
                 registerButtonText
             }
         }
@@ -94,6 +102,6 @@ struct LoginView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(fitHubViewModel: FitHubViewModel())
     }
 }

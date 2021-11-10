@@ -6,12 +6,18 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct FitHubApp: App {
+    init() {
+        FirebaseApp.configure()
+    }
+    
+    
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            LoginView(fitHubViewModel: FitHubViewModel())
         }
     }
 }
