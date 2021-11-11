@@ -17,6 +17,9 @@
 		E1ED178C273BA67A00BD8980 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1ED178B273BA67A00BD8980 /* GoogleService-Info.plist */; };
 		E1ED178E273BAC4600BD8980 /* FitHubRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ED178D273BAC4600BD8980 /* FitHubRepo.swift */; };
 		E1ED1796273CCD8400BD8980 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ED1795273CCD8400BD8980 /* UserModel.swift */; };
+		E1ED179E273CD4E300BD8980 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ED179D273CD4E200BD8980 /* MainView.swift */; };
+		E1ED17A0273CD99E00BD8980 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ED179F273CD99D00BD8980 /* RegisterView.swift */; };
+		E1ED17A2273CE55700BD8980 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ED17A1273CE55600BD8980 /* ViewModifiers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		E1ED178B273BA67A00BD8980 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E1ED178D273BAC4600BD8980 /* FitHubRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitHubRepo.swift; sourceTree = "<group>"; };
 		E1ED1795273CCD8400BD8980 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		E1ED179D273CD4E200BD8980 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		E1ED179F273CD99D00BD8980 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		E1ED17A1273CE55600BD8980 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,15 +70,15 @@
 		E1ED16FF2738E7FC00BD8980 /* FitHub */ = {
 			isa = PBXGroup;
 			children = (
+				E1ED179C273CD43300BD8980 /* Repositories */,
+				E1ED179B273CD42800BD8980 /* ViewModels */,
+				E1ED179A273CD41000BD8980 /* Models2 */,
+				E1ED1797273CD36900BD8980 /* Views */,
 				E1ED17002738E7FC00BD8980 /* FitHubApp.swift */,
-				E1ED17022738E7FC00BD8980 /* LoginView.swift */,
 				E1ED178B273BA67A00BD8980 /* GoogleService-Info.plist */,
-				E1ED1732273B7DC000BD8980 /* FitHubViewModel.swift */,
 				E1ED17042738E80D00BD8980 /* Assets.xcassets */,
 				E1ED17092738E80E00BD8980 /* Info.plist */,
 				E1ED17062738E80E00BD8980 /* Preview Content */,
-				E1ED178D273BAC4600BD8980 /* FitHubRepo.swift */,
-				E1ED1795273CCD8400BD8980 /* UserModel.swift */,
 			);
 			path = FitHub;
 			sourceTree = "<group>";
@@ -83,6 +89,41 @@
 				E1ED17072738E80E00BD8980 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E1ED1797273CD36900BD8980 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E1ED17022738E7FC00BD8980 /* LoginView.swift */,
+				E1ED179D273CD4E200BD8980 /* MainView.swift */,
+				E1ED179F273CD99D00BD8980 /* RegisterView.swift */,
+				E1ED17A1273CE55600BD8980 /* ViewModifiers.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E1ED179A273CD41000BD8980 /* Models2 */ = {
+			isa = PBXGroup;
+			children = (
+				E1ED1795273CCD8400BD8980 /* UserModel.swift */,
+			);
+			path = Models2;
+			sourceTree = "<group>";
+		};
+		E1ED179B273CD42800BD8980 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E1ED1732273B7DC000BD8980 /* FitHubViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E1ED179C273CD43300BD8980 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				E1ED178D273BAC4600BD8980 /* FitHubRepo.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,7 +204,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1ED17032738E7FC00BD8980 /* LoginView.swift in Sources */,
+				E1ED179E273CD4E300BD8980 /* MainView.swift in Sources */,
 				E1ED178E273BAC4600BD8980 /* FitHubRepo.swift in Sources */,
+				E1ED17A2273CE55700BD8980 /* ViewModifiers.swift in Sources */,
+				E1ED17A0273CD99E00BD8980 /* RegisterView.swift in Sources */,
 				E1ED1733273B7DC000BD8980 /* FitHubViewModel.swift in Sources */,
 				E1ED1796273CCD8400BD8980 /* UserModel.swift in Sources */,
 				E1ED17012738E7FC00BD8980 /* FitHubApp.swift in Sources */,

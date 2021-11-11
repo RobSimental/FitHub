@@ -17,7 +17,7 @@ struct FitHubApp: App {
     
     var body: some Scene {
         WindowGroup {
-            LoginView(fitHubViewModel: FitHubViewModel())
+            MainView()
         }
     }
 }

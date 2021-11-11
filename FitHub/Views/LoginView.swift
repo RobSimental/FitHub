@@ -15,24 +15,20 @@ struct LoginView: View {
     
     @State private var email: String = ""
     @State private var password: String = ""
-    @State private var isLoggedIn: Bool = false
+    
     var body: some View {
-        if(!isLoggedIn) {
-            
+        NavigationView {
             ZStack {
                 //background image
                 Image("partner").resizable().ignoresSafeArea()
                 
-                VStack {
+                VStack(spacing: 0) {
                     fithubLogo
                     Spacer()
                     welcomeText
                     inputFields
                 }
-
             }
-        } else {
-            
         }
     }
     var fithubLogo: some View {
@@ -43,7 +39,10 @@ struct LoginView: View {
                 .font(.largeTitle)
                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
         }
-        .foregroundColor(lightPurple)
+        .padding(.horizontal, 5)
+        .foregroundColor(.white)
+        .background(lightPurple)
+        .cornerRadius(30)
     }
     var welcomeText: some View {
         Text("Welcome")
@@ -54,48 +53,22 @@ struct LoginView: View {
     var inputFields: some View {
         VStack {
             TextField ("Email Address", text: $email)
-                .padding()
-                .background(Color.white)
-                .cornerRadius(5)
-                .padding(.bottom,20)
+                .inputTextBoxStyle()
                 .opacity(0.9)
             SecureField ("Password", text: $password)
-                .padding()
-                .background(Color.white)
-                .cornerRadius(5)
-                .padding(.bottom,20)
+                .inputTextBoxStyle()
                 .opacity(0.9)
             
             Button(action: {fitHubViewModel.login(email: "rob", password: password)}){
-                loginButtonText
+                Text("LOGIN").loginButtonStyle(color: .green)
             }
-            Button (action: {fitHubViewModel.register(email: "rob@mail", username: "rob", password: "pass", interests: ["Weight Lifting"])}) {
-                registerButtonText
+            
+            NavigationLink(destination: RegisterView(fithubViewModel: fitHubViewModel)) {
+                Text("REGISTER").loginButtonStyle(color: .pink)
             }
         }
         .padding(.vertical)
         .padding(.horizontal)
-    }
-    
-
-    
-    var loginButtonText: some View {
-        Text("LOGIN")
-            .font(.headline)
-            .foregroundColor(.white)
-            .padding()
-            .frame(width: 220, height: 60)
-            .background(Color.green)
-            .cornerRadius(15.0)
-    }
-    var registerButtonText: some View {
-        Text("SIGN UP")
-            .font(.headline)
-            .foregroundColor(.white)
-            .padding()
-            .frame(width: 220, height: 60)
-            .background(Color.pink)
-            .cornerRadius(15.0)
     }
 }
 
