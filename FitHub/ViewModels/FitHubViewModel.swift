@@ -8,20 +8,24 @@
 import Foundation
 
 class FitHubViewModel: ObservableObject {
-    private static let interestList = ["Weight Lifting", "Running", "Hiking"]
+    static let interestList = ["Weight Lifting", "Running", "Hiking", "Biking", "Basketball", "Soccer"]
+    @Published var selection = Set<String>()
     private var repo = FitHubRepo()
-    private var user = UserModel()
+    @Published var user = UserModel()
+    @Published var eventList: [EventModel] = []
+    @Published var eventCreator: Bool = false
+    @Published var loggedIn: Bool = false
     
-    //creates new user model then calls repo to register to db
-    func register(email: String, username: String, password: String, interests: [String]) {
-        user.email = email
-        user.password = password
-        user.username = username
-        user.interests = interests
-        
-        repo.register(user)
+    func register(){
+        //may need to await
+        //repo.register(user)
+        login(email: user.email, password: user.password)
     }
     func login(email: String, password: String) {
-        repo.login(email, password)
+        loggedIn = repo.login(email, password)
+    }
+    func createEvent(event: EventModel) {
+        
+        eventList.append(event)
     }
 }

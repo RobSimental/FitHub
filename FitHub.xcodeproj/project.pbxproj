@@ -7,9 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E13934B3276336D6000465C0 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13934AC276336D6000465C0 /* EventView.swift */; };
+		E13934B4276336D6000465C0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13934AD276336D6000465C0 /* LoginView.swift */; };
+		E13934B5276336D6000465C0 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13934AE276336D6000465C0 /* ViewModifiers.swift */; };
+		E13934B6276336D6000465C0 /* CreateEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13934AF276336D6000465C0 /* CreateEventView.swift */; };
+		E13934B7276336D6000465C0 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13934B0276336D6000465C0 /* RegisterView.swift */; };
+		E13934B8276336D6000465C0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13934B1276336D6000465C0 /* MainView.swift */; };
+		E13934B9276336D6000465C0 /* InterestsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13934B2276336D6000465C0 /* InterestsView.swift */; };
+		E13934BB2763373B000465C0 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13934BA2763373B000465C0 /* EventModel.swift */; };
+		E13934BD27633E16000465C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E13934BC27633E16000465C0 /* Assets.xcassets */; };
 		E1ED17012738E7FC00BD8980 /* FitHubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ED17002738E7FC00BD8980 /* FitHubApp.swift */; };
-		E1ED17032738E7FC00BD8980 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ED17022738E7FC00BD8980 /* LoginView.swift */; };
-		E1ED17052738E80D00BD8980 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1ED17042738E80D00BD8980 /* Assets.xcassets */; };
 		E1ED17082738E80E00BD8980 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1ED17072738E80E00BD8980 /* Preview Assets.xcassets */; };
 		E1ED1733273B7DC000BD8980 /* FitHubViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ED1732273B7DC000BD8980 /* FitHubViewModel.swift */; };
 		E1ED1788273BA5C000BD8980 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = E1ED1787273BA5C000BD8980 /* FirebaseFirestore */; };
@@ -17,25 +24,26 @@
 		E1ED178C273BA67A00BD8980 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1ED178B273BA67A00BD8980 /* GoogleService-Info.plist */; };
 		E1ED178E273BAC4600BD8980 /* FitHubRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ED178D273BAC4600BD8980 /* FitHubRepo.swift */; };
 		E1ED1796273CCD8400BD8980 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ED1795273CCD8400BD8980 /* UserModel.swift */; };
-		E1ED179E273CD4E300BD8980 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ED179D273CD4E200BD8980 /* MainView.swift */; };
-		E1ED17A0273CD99E00BD8980 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ED179F273CD99D00BD8980 /* RegisterView.swift */; };
-		E1ED17A2273CE55700BD8980 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ED17A1273CE55600BD8980 /* ViewModifiers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E13934AC276336D6000465C0 /* EventView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
+		E13934AD276336D6000465C0 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		E13934AE276336D6000465C0 /* ViewModifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
+		E13934AF276336D6000465C0 /* CreateEventView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventView.swift; sourceTree = "<group>"; };
+		E13934B0276336D6000465C0 /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		E13934B1276336D6000465C0 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		E13934B2276336D6000465C0 /* InterestsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterestsView.swift; sourceTree = "<group>"; };
+		E13934BA2763373B000465C0 /* EventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
+		E13934BC27633E16000465C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../FHOffline/FHOffline/Assets.xcassets; sourceTree = "<group>"; };
 		E1ED16FD2738E7FC00BD8980 /* FitHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1ED17002738E7FC00BD8980 /* FitHubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitHubApp.swift; sourceTree = "<group>"; };
-		E1ED17022738E7FC00BD8980 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		E1ED17042738E80D00BD8980 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1ED17072738E80E00BD8980 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E1ED17092738E80E00BD8980 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1ED1732273B7DC000BD8980 /* FitHubViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitHubViewModel.swift; sourceTree = "<group>"; };
 		E1ED178B273BA67A00BD8980 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E1ED178D273BAC4600BD8980 /* FitHubRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitHubRepo.swift; sourceTree = "<group>"; };
 		E1ED1795273CCD8400BD8980 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		E1ED179D273CD4E200BD8980 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		E1ED179F273CD99D00BD8980 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
-		E1ED17A1273CE55600BD8980 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +59,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E13934AB276336D6000465C0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E13934AC276336D6000465C0 /* EventView.swift */,
+				E13934AD276336D6000465C0 /* LoginView.swift */,
+				E13934AE276336D6000465C0 /* ViewModifiers.swift */,
+				E13934AF276336D6000465C0 /* CreateEventView.swift */,
+				E13934B0276336D6000465C0 /* RegisterView.swift */,
+				E13934B1276336D6000465C0 /* MainView.swift */,
+				E13934B2276336D6000465C0 /* InterestsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		E1ED16F42738E7FC00BD8980 = {
 			isa = PBXGroup;
 			children = (
@@ -73,10 +95,10 @@
 				E1ED179C273CD43300BD8980 /* Repositories */,
 				E1ED179B273CD42800BD8980 /* ViewModels */,
 				E1ED179A273CD41000BD8980 /* Models2 */,
-				E1ED1797273CD36900BD8980 /* Views */,
+				E13934AB276336D6000465C0 /* Views */,
 				E1ED17002738E7FC00BD8980 /* FitHubApp.swift */,
 				E1ED178B273BA67A00BD8980 /* GoogleService-Info.plist */,
-				E1ED17042738E80D00BD8980 /* Assets.xcassets */,
+				E13934BC27633E16000465C0 /* Assets.xcassets */,
 				E1ED17092738E80E00BD8980 /* Info.plist */,
 				E1ED17062738E80E00BD8980 /* Preview Content */,
 			);
@@ -91,20 +113,10 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		E1ED1797273CD36900BD8980 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				E1ED17022738E7FC00BD8980 /* LoginView.swift */,
-				E1ED179D273CD4E200BD8980 /* MainView.swift */,
-				E1ED179F273CD99D00BD8980 /* RegisterView.swift */,
-				E1ED17A1273CE55600BD8980 /* ViewModifiers.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		E1ED179A273CD41000BD8980 /* Models2 */ = {
 			isa = PBXGroup;
 			children = (
+				E13934BA2763373B000465C0 /* EventModel.swift */,
 				E1ED1795273CCD8400BD8980 /* UserModel.swift */,
 			);
 			path = Models2;
@@ -192,7 +204,7 @@
 			files = (
 				E1ED178C273BA67A00BD8980 /* GoogleService-Info.plist in Resources */,
 				E1ED17082738E80E00BD8980 /* Preview Assets.xcassets in Resources */,
-				E1ED17052738E80D00BD8980 /* Assets.xcassets in Resources */,
+				E13934BD27633E16000465C0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,14 +215,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1ED17032738E7FC00BD8980 /* LoginView.swift in Sources */,
-				E1ED179E273CD4E300BD8980 /* MainView.swift in Sources */,
+				E13934B7276336D6000465C0 /* RegisterView.swift in Sources */,
+				E13934B4276336D6000465C0 /* LoginView.swift in Sources */,
+				E13934B6276336D6000465C0 /* CreateEventView.swift in Sources */,
+				E13934B8276336D6000465C0 /* MainView.swift in Sources */,
+				E13934B5276336D6000465C0 /* ViewModifiers.swift in Sources */,
 				E1ED178E273BAC4600BD8980 /* FitHubRepo.swift in Sources */,
-				E1ED17A2273CE55700BD8980 /* ViewModifiers.swift in Sources */,
-				E1ED17A0273CD99E00BD8980 /* RegisterView.swift in Sources */,
 				E1ED1733273B7DC000BD8980 /* FitHubViewModel.swift in Sources */,
 				E1ED1796273CCD8400BD8980 /* UserModel.swift in Sources */,
 				E1ED17012738E7FC00BD8980 /* FitHubApp.swift in Sources */,
+				E13934B9276336D6000465C0 /* InterestsView.swift in Sources */,
+				E13934BB2763373B000465C0 /* EventModel.swift in Sources */,
+				E13934B3276336D6000465C0 /* EventView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

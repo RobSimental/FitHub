@@ -24,7 +24,8 @@ class FitHubRepo: ObservableObject {
     }
     
     
-    func login(_ email: String, _ password: String) {
+    func login(_ email: String, _ password: String) -> Bool {
+        var test: Bool = false
         db.collection(path).whereField("email", isEqualTo: email).getDocuments { (snap,err) in
             if(err != nil){
                 print("failed to login")
@@ -32,13 +33,18 @@ class FitHubRepo: ObservableObject {
             }
             if let acc = snap {
                 for i in acc.documents{
-                    print(i.get("email") as! String)
-                    print(i.get("username") as! String)
-                    print(i.get("password") as! String)
+                    print("actual password: \(i.get("password") as! String)")
+                    print("attempt: \(password)")
+                    if (password == i.get("password") as! String) {
+                        print("hacked")
+                        test = true
+                    }
                 }
             }else{
                 print("nil result")
             }
         }
+        return test
+        
     }
 }

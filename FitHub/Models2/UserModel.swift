@@ -9,12 +9,11 @@ import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-struct UserModel: Identifiable, Codable {
+struct UserModel:  Codable {
     @DocumentID var id: String?
-    var email: String = ""
-    var username: String = ""
-    var password: String = ""
+    var email: String = "test@mail"
+    var username: String = "Test User"
+    var password: String = "test"
+    //var cpassword: String = ""
     var interests: [String] = []
-    
-    
 }
