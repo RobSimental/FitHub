@@ -15,6 +15,7 @@ Working Features:
   -user interests are saved  
 -create events  
 -view events (refresh list by tapping on Fithub Logo)  
+-tap event to expand and see event description (toggable)  
 -sign out (tap on top right profile icon)  
 
 Currently working on:  
