@@ -6,6 +6,7 @@
 //
 
 import Foundation
+//ViewModel interacts with the Model and calls the functions from Repository
 
 class FitHubViewModel: ObservableObject {
     static let interestList = ["Weight Lifting", "Running", "Hiking", "Biking", "Basketball", "Soccer"]
@@ -16,9 +17,10 @@ class FitHubViewModel: ObservableObject {
     @Published var createEventView: Bool = false
     @Published var loggedIn: Bool = false
     
-    func register()  {
-        //repo.register(user)
-         login(username: user.username, password: user.password)
+    func register() {
+        //update user interests from selection
+        user.interests.formUnion(selection)
+        repo.register(user, self)
     }
     
     func login(username: String, password: String) {

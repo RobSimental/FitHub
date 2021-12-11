@@ -12,18 +12,35 @@ import FirebaseFirestoreSwift
 class FitHubRepo: ObservableObject {
     private let path = "users"
     private let db = Firestore.firestore()
-    @Published private var user: UserModel = UserModel()
+    //@Published private var user: UserModel = UserModel()
     
-    //register to db
-    func register(_ user: UserModel) {
-        do {
-            _ = try db.collection(path).addDocument(from: user)
-        } catch {
-            print("Adding a study card failed")
-        }
+    //register to db, then calls self.login
+    func register(_ user: UserModel,_ fitHubViewModel: FitHubViewModel) {
+
+            db.collection(path).whereField("username", isEqualTo: user.username).getDocuments { (snap,err) in
+                if(err != nil){
+                    print("failed to login")
+                    return
+                }
+                if let acc = snap {
+                    if(acc.documents.isEmpty){
+                        do {
+                            _ = try self.db.collection(self.path).addDocument(from: user)
+                            self.login(user.username, user.password, fitHubViewModel)
+                        } catch {
+                            print("failed to add")
+                        }
+                    } else {
+                        //Todo send an alert to user
+                        print("Username already exists")
+                    }
+                }else{
+                    print("nil result")
+                }
+            }
     }
     
-    
+    //attempts to login the user from database
     func login(_ username: String, _ password: String,_ fitHubViewModel: FitHubViewModel) {
         
         db.collection(path).whereField("username", isEqualTo: username).getDocuments { (snap,err) in
@@ -32,6 +49,7 @@ class FitHubRepo: ObservableObject {
                 return
             }
             if let acc = snap {
+                //print(acc.documents)
                 for i in acc.documents{
                     if (password == i.get("password") as! String) {
                         fitHubViewModel.user.email = i.get("email") as! String
