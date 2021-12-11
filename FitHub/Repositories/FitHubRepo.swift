@@ -24,9 +24,9 @@ class FitHubRepo: ObservableObject {
     }
     
     
-    func login(_ email: String, _ password: String,_ fitHubViewModel: FitHubViewModel) {
+    func login(_ username: String, _ password: String,_ fitHubViewModel: FitHubViewModel) {
         
-        db.collection(path).whereField("email", isEqualTo: email).getDocuments { (snap,err) in
+        db.collection(path).whereField("username", isEqualTo: username).getDocuments { (snap,err) in
             if(err != nil){
                 print("failed to login")
                 return
@@ -34,7 +34,7 @@ class FitHubRepo: ObservableObject {
             if let acc = snap {
                 for i in acc.documents{
                     if (password == i.get("password") as! String) {
-                        fitHubViewModel.user.username = i.get("username") as! String
+                        fitHubViewModel.user.email = i.get("email") as! String
                         let intList = i.get("interests") as! [String]
                         fitHubViewModel.selection.formUnion(intList)
                         //this is updating the Main View so that we leave the login screen

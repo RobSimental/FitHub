@@ -35,14 +35,14 @@ struct LoginView: View {
     
     var inputFields: some View {
         VStack {
-            TextField ("Email Address", text: $fitHubViewModel.user.email)
+            TextField ("Username", text: $fitHubViewModel.user.username)
                 .inputTextBoxStyle()
                 .opacity(0.9)
             SecureField ("Password", text: $fitHubViewModel.user.password)
                 .inputTextBoxStyle()
                 .opacity(0.9)
             
-            Button(action: {fitHubViewModel.login(email: fitHubViewModel.user.email, password: fitHubViewModel.user.password)}){
+            Button(action: {fitHubViewModel.login(username: fitHubViewModel.user.username, password: fitHubViewModel.user.password)}){
                 Text("LOGIN").loginButtonStyle(color: .green)
             }
             

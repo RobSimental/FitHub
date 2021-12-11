@@ -18,11 +18,11 @@ class FitHubViewModel: ObservableObject {
     
     func register()  {
         //repo.register(user)
-         login(email: user.email, password: user.password)
+         login(username: user.username, password: user.password)
     }
     
-    func login(email: String, password: String) {
-        repo.login(email, password, self)
+    func login(username: String, password: String) {
+        repo.login(username, password, self)
     }
     
     func createEvent(event: EventModel) {
