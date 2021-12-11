@@ -28,7 +28,12 @@ class FitHubViewModel: ObservableObject {
     }
     
     func createEvent(event: EventModel) {
-        
-        eventList.append(event)
+        repo.createEvent(event: event, fitHubViewModel: self)
+        //eventList.append(event)
+        //print(eventList)
+    }
+    
+    func getEvents() {
+        repo.getEvents(fitHubViewModel: self)
     }
 }

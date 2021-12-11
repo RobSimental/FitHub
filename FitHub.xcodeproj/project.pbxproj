@@ -16,6 +16,7 @@
 		E13934B9276336D6000465C0 /* InterestsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13934B2276336D6000465C0 /* InterestsView.swift */; };
 		E13934BB2763373B000465C0 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13934BA2763373B000465C0 /* EventModel.swift */; };
 		E13934BD27633E16000465C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E13934BC27633E16000465C0 /* Assets.xcassets */; };
+		E17A84CC2764843D0071755C /* README.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E17A84CB2764843C0071755C /* README.rtf */; };
 		E1ED17012738E7FC00BD8980 /* FitHubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ED17002738E7FC00BD8980 /* FitHubApp.swift */; };
 		E1ED17082738E80E00BD8980 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1ED17072738E80E00BD8980 /* Preview Assets.xcassets */; };
 		E1ED1733273B7DC000BD8980 /* FitHubViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ED1732273B7DC000BD8980 /* FitHubViewModel.swift */; };
@@ -36,6 +37,7 @@
 		E13934B2276336D6000465C0 /* InterestsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterestsView.swift; sourceTree = "<group>"; };
 		E13934BA2763373B000465C0 /* EventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		E13934BC27633E16000465C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../FHOffline/FHOffline/Assets.xcassets; sourceTree = "<group>"; };
+		E17A84CB2764843C0071755C /* README.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = README.rtf; sourceTree = "<group>"; };
 		E1ED16FD2738E7FC00BD8980 /* FitHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1ED17002738E7FC00BD8980 /* FitHubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitHubApp.swift; sourceTree = "<group>"; };
 		E1ED17072738E80E00BD8980 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -94,9 +96,10 @@
 			children = (
 				E1ED179C273CD43300BD8980 /* Repositories */,
 				E1ED179B273CD42800BD8980 /* ViewModels */,
-				E1ED179A273CD41000BD8980 /* Models2 */,
+				E1ED179A273CD41000BD8980 /* Models */,
 				E13934AB276336D6000465C0 /* Views */,
 				E1ED17002738E7FC00BD8980 /* FitHubApp.swift */,
+				E17A84CB2764843C0071755C /* README.rtf */,
 				E1ED178B273BA67A00BD8980 /* GoogleService-Info.plist */,
 				E13934BC27633E16000465C0 /* Assets.xcassets */,
 				E1ED17092738E80E00BD8980 /* Info.plist */,
@@ -113,13 +116,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		E1ED179A273CD41000BD8980 /* Models2 */ = {
+		E1ED179A273CD41000BD8980 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				E13934BA2763373B000465C0 /* EventModel.swift */,
 				E1ED1795273CCD8400BD8980 /* UserModel.swift */,
 			);
-			path = Models2;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		E1ED179B273CD42800BD8980 /* ViewModels */ = {
@@ -204,6 +207,7 @@
 			files = (
 				E1ED178C273BA67A00BD8980 /* GoogleService-Info.plist in Resources */,
 				E1ED17082738E80E00BD8980 /* Preview Assets.xcassets in Resources */,
+				E17A84CC2764843D0071755C /* README.rtf in Resources */,
 				E13934BD27633E16000465C0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,6 +14,5 @@ struct UserModel:  Codable {
     var email: String = "Test@mail"
     var username: String = "Rob"
     var password: String = "pass"
-    //var cpassword: String = ""
     var interests = Set<String>()
 }

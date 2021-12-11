@@ -67,4 +67,40 @@ class FitHubRepo: ObservableObject {
             }
         }
     }
+    
+    func createEvent(event: EventModel, fitHubViewModel: FitHubViewModel) {
+        do {
+            _ = try self.db.collection("events").addDocument(from: event)
+            getEvents(fitHubViewModel: fitHubViewModel)
+        } catch {
+            print("failed to add")
+        }
+    }
+    
+    func getEvents(fitHubViewModel: FitHubViewModel) {
+        print("loading events from database")
+        db.collection("events").getDocuments { (snap,err) in
+            if(err != nil){
+                print("failed to login")
+                return
+            }
+            if let acc = snap {
+                for i in acc.documents{
+                    let event = EventModel(
+                        id: i.documentID,
+                        title: i.get("title") as! String,
+                        description: i.get("description") as! String,
+                        eventCreator: i.get("eventCreator") as! String
+                    )
+                    DispatchQueue.main.async {
+                        if (!fitHubViewModel.eventList.contains(event)) {
+                            fitHubViewModel.eventList.append(event)
+                        }
+                    }
+                }
+            }else{
+                print("nil result")
+            }
+        }
+    }
 }

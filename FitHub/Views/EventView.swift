@@ -11,11 +11,11 @@ struct EventView: View {
     @ObservedObject var fitHubViewModel: FitHubViewModel
     @State var eventTitle: String = ""
     @State var eventDescription: String = ""
-    @State var idNumber: Int = 0
+//    @State var idNumber: Int = 0
     
     func createEvent() {
-        idNumber += 1
-        let newEvent = EventModel(id: idNumber, title: eventTitle, description: eventDescription, eventCreator: fitHubViewModel.user)
+        //idNumber += 1
+        let newEvent = EventModel(title: eventTitle, description: eventDescription, eventCreator: fitHubViewModel.user.username)
         fitHubViewModel.createEvent(event: newEvent)
         fitHubViewModel.createEventView = false
     }
@@ -58,7 +58,7 @@ struct EventHeader: View {
     var body: some View {
         ZStack {
             Color.white.ignoresSafeArea()
-            fithubLogo()
+            fithubLogo().onTapGesture(perform: fitHubViewModel.getEvents)
             HStack {
                 Button(action: {fitHubViewModel.createEventView = true}){
                     Text("Create Event")
@@ -83,7 +83,7 @@ struct EventHeader: View {
 struct EventCardView: View {
     var title: String
     var description: String
-    var eventCreator: UserModel
+    var eventCreator: String
     @State var viewDescription: Bool = false
     @State var frameSize: CGFloat = 100
     var body: some View {
@@ -97,7 +97,7 @@ struct EventCardView: View {
                         Text(title)
                             .font(.title)
                             .fontWeight(.medium)
-                        Text("Posted by \(eventCreator.username)")
+                        Text("Posted by \(eventCreator)")
                             .font(.subheadline)
                             .multilineTextAlignment(.leading)
                     }
