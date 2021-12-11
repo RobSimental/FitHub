@@ -17,7 +17,7 @@ struct EventView: View {
         idNumber += 1
         let newEvent = EventModel(id: idNumber, title: eventTitle, description: eventDescription, eventCreator: fitHubViewModel.user)
         fitHubViewModel.createEvent(event: newEvent)
-        fitHubViewModel.eventCreator = false
+        fitHubViewModel.createEventView = false
     }
     
     var body: some View {
@@ -26,13 +26,13 @@ struct EventView: View {
             
             VStack {
                 EventHeader(fitHubViewModel: fitHubViewModel)
-                if (fitHubViewModel.eventCreator) {
+                if (fitHubViewModel.createEventView) {
                     VStack {
                         TextField ("Event Title", text: $eventTitle)
                             .inputTextBoxStyle()
                         TextField ("Event Description", text: $eventDescription)
                             .inputTextBoxStyle()
-                        Button(action: {fitHubViewModel.eventCreator = false}, label: {
+                        Button(action: {fitHubViewModel.createEventView = false}, label: {
                             Text("Cancel").loginButtonStyle(color: .pink)
                         })
                         Button(action: createEvent, label: {
@@ -60,7 +60,7 @@ struct EventHeader: View {
             Color.white.ignoresSafeArea()
             fithubLogo()
             HStack {
-                Button(action: {fitHubViewModel.eventCreator = true}){
+                Button(action: {fitHubViewModel.createEventView = true}){
                     Text("Create Event")
                         .foregroundColor(.black)
                         .font(.headline)

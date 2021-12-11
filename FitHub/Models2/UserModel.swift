@@ -11,9 +11,9 @@ import FirebaseFirestoreSwift
 
 struct UserModel:  Codable {
     @DocumentID var id: String?
-    var email: String = "test@mail"
+    var email: String = "Rob"
     var username: String = "Test User"
-    var password: String = "test"
+    var password: String = "pass"
     //var cpassword: String = ""
     var interests: [String] = []
 }

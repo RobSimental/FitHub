@@ -13,17 +13,18 @@ class FitHubViewModel: ObservableObject {
     private var repo = FitHubRepo()
     @Published var user = UserModel()
     @Published var eventList: [EventModel] = []
-    @Published var eventCreator: Bool = false
+    @Published var createEventView: Bool = false
     @Published var loggedIn: Bool = false
     
-    func register(){
-        //may need to await
+    func register()  {
         //repo.register(user)
-        login(email: user.email, password: user.password)
+         login(email: user.email, password: user.password)
     }
+    
     func login(email: String, password: String) {
-        loggedIn = repo.login(email, password)
+        repo.login(email, password, self)
     }
+    
     func createEvent(event: EventModel) {
         
         eventList.append(event)
