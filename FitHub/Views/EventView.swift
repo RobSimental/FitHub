@@ -11,11 +11,13 @@ struct EventView: View {
     @ObservedObject var fitHubViewModel: FitHubViewModel
     @State var eventTitle: String = ""
     @State var eventDescription: String = ""
-//    @State var idNumber: Int = 0
     
     func createEvent() {
-        //idNumber += 1
-        let newEvent = EventModel(title: eventTitle, description: eventDescription, eventCreator: fitHubViewModel.user.username)
+        let newEvent = EventModel(
+            title: eventTitle,
+            description: eventDescription,
+            eventCreator: fitHubViewModel.user.username
+        )
         fitHubViewModel.createEvent(event: newEvent)
         fitHubViewModel.createEventView = false
     }
@@ -58,9 +60,18 @@ struct EventHeader: View {
     var body: some View {
         ZStack {
             Color.white.ignoresSafeArea()
-            fithubLogo().onTapGesture(perform: fitHubViewModel.getEvents)
+            
+            fithubLogo()
+                .onTapGesture(perform: fitHubViewModel.getEvents)
+                .onAppear(perform: fitHubViewModel.getEvents)
+            
             HStack {
-                Button(action: {fitHubViewModel.createEventView = true}){
+                Button(action: {
+                        withAnimation{
+                            fitHubViewModel.createEventView = !fitHubViewModel.createEventView
+                        }
+                    }
+                ){
                     Text("Create Event")
                         .foregroundColor(.black)
                         .font(.headline)
@@ -69,14 +80,24 @@ struct EventHeader: View {
                         .padding()
                 }
                 .frame(width: 100)
+                
                 Spacer()
-                Image(systemName: "person.crop.circle")
-                    .resizable()
-                    .frame(width: 50, height: 50)
-                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                    .padding()
+                Menu(content: {
+                    Button("Sign Out", action: {
+                        fitHubViewModel.loggedIn = false
+                    })
+                }, label: {
+                    Image(systemName: "person.crop.circle")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                        .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                        .padding()
+                })
+                
             }
-        }.frame(height: 50).padding(.vertical)
+        }
+        .frame(height: 50)
+        .padding(.vertical)
     }
 }
 

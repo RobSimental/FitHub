@@ -15,6 +15,7 @@ struct EventModel: Codable, Identifiable, Equatable {
     var description: String = "This is an event"
     var eventCreator: String
     
+    //allows comparing events using just id
     static func ==(lhs: EventModel, rhs: EventModel) -> Bool {
         return lhs.id == rhs.id
     }
