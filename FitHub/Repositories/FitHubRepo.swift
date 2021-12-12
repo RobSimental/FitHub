@@ -52,6 +52,7 @@ class FitHubRepo: ObservableObject {
                 //print(acc.documents)
                 for i in acc.documents{
                     if (password == i.get("password") as! String) {
+                        fitHubViewModel.user.id = i.documentID
                         fitHubViewModel.user.email = i.get("email") as! String
                         let intList = i.get("interests") as! [String]
                         fitHubViewModel.selection.formUnion(intList)
@@ -67,7 +68,7 @@ class FitHubRepo: ObservableObject {
             }
         }
     }
-    
+    //posts event to database
     func createEvent(event: EventModel, fitHubViewModel: FitHubViewModel) {
         do {
             _ = try self.db.collection("events").addDocument(from: event)
@@ -76,10 +77,37 @@ class FitHubRepo: ObservableObject {
             print("failed to add")
         }
     }
-    
+    //loads all events from database
     func getEvents(fitHubViewModel: FitHubViewModel) {
         print("loading events from database")
         db.collection("events").getDocuments { (snap,err) in
+            if(err != nil){
+                print("failed to login")
+                return
+            }
+            if let acc = snap {
+                for i in acc.documents{
+                    let event = EventModel(
+                        id: i.documentID,
+                        title: i.get("title") as! String,
+                        description: i.get("description") as! String,
+                        eventCreator: i.get("eventCreator") as! String
+                    )
+                    DispatchQueue.main.async {
+                        if (!fitHubViewModel.eventList.contains(event)) {
+                            fitHubViewModel.eventList.append(event)
+                        }
+                    }
+                }
+            }else{
+                print("nil result")
+            }
+        }
+    }
+    
+    //gets events created by the user, can be used for self or other user
+    func getUserEvents(user: UserModel, fitHubViewModel: FitHubViewModel) {
+        db.collection("events").whereField("eventCreator", isEqualTo: user.username).getDocuments { (snap,err) in
             if(err != nil){
                 print("failed to login")
                 return

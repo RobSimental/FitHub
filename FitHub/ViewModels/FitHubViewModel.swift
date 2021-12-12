@@ -36,4 +36,9 @@ class FitHubViewModel: ObservableObject {
     func getEvents() {
         repo.getEvents(fitHubViewModel: self)
     }
+    
+    func getUserEvents(user: UserModel) {
+        eventList.removeAll()
+        repo.getUserEvents(user: user, fitHubViewModel: self)
+    }
 }

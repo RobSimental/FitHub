@@ -45,7 +45,9 @@ struct EventView: View {
                 }
                 ScrollView {
                     ForEach(fitHubViewModel.eventList.reversed()) {event in
-                        EventCardView(title: event.title, description: event.description, eventCreator: event.eventCreator)
+                        withAnimation {
+                            EventCardView(title: event.title, description: event.description, eventCreator: event.eventCreator)
+                        }
                     }
                 }
             }
@@ -83,9 +85,15 @@ struct EventHeader: View {
                 
                 Spacer()
                 Menu(content: {
-                    Button("Sign Out", action: {
+                    Button("My Events") {
+                        fitHubViewModel.getUserEvents(user: fitHubViewModel.user)
+                    }
+                    Button("All Events") {
+                        fitHubViewModel.getEvents()
+                    }
+                    Button("Sign Out"){
                         fitHubViewModel.loggedIn = false
-                    })
+                    }
                 }, label: {
                     Image(systemName: "person.crop.circle")
                         .resizable()
