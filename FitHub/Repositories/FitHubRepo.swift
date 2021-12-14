@@ -53,9 +53,10 @@ class FitHubRepo: ObservableObject {
                 for i in acc.documents{
                     if (password == i.get("password") as! String) {
                         fitHubViewModel.user.id = i.documentID
+                        fitHubViewModel.user.favoriteEvents.formUnion(i.get("favoriteEvents") as! [String])
                         fitHubViewModel.user.email = i.get("email") as! String
-                        let intList = i.get("interests") as! [String]
-                        fitHubViewModel.selection.formUnion(intList)
+                        //let intList = i.get("interests") as! [String]
+                        fitHubViewModel.selection.formUnion(i.get("interests") as! [String])
                         //this is updating the Main View so that we leave the login screen
                         //has to be done async because getDocuments is async
                         DispatchQueue.main.async {
@@ -130,5 +131,13 @@ class FitHubRepo: ObservableObject {
                 print("nil result")
             }
         }
+    }
+    
+    //add event to favorites
+    func favoriteEvent(event: String, fitHubViewModel: FitHubViewModel) {
+        db.collection("users").document(fitHubViewModel.user.id!).updateData(["favoriteEvents": FieldValue.arrayUnion([event])])
+    }
+    func unfavoriteEvent(event: String, fitHubViewModel: FitHubViewModel) {
+        db.collection("users").document(fitHubViewModel.user.id!).updateData(["favoriteEvents": FieldValue.arrayRemove([event])])
     }
 }

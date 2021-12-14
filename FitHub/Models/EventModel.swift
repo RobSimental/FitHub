@@ -9,7 +9,7 @@ import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-struct EventModel: Codable, Identifiable, Equatable {
+struct EventModel: Codable, Identifiable, Equatable, Hashable {
     @DocumentID var id: String?
     var title: String = "Test"
     var description: String = "This is an event"

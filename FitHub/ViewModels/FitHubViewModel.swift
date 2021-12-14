@@ -29,8 +29,6 @@ class FitHubViewModel: ObservableObject {
     
     func createEvent(event: EventModel) {
         repo.createEvent(event: event, fitHubViewModel: self)
-        //eventList.append(event)
-        //print(eventList)
     }
     
     func getEvents() {
@@ -40,5 +38,22 @@ class FitHubViewModel: ObservableObject {
     func getUserEvents(user: UserModel) {
         eventList.removeAll()
         repo.getUserEvents(user: user, fitHubViewModel: self)
+    }
+    
+    func favoriteEvent(eventID: String?) {
+        if let id = eventID {
+            user.favoriteEvents.insert(id)
+            repo.favoriteEvent(event: id, fitHubViewModel: self)
+        } else {
+            print("null eventID")
+        }
+    }
+    func unfavoriteEvent(eventID: String?) {
+        if let id = eventID {
+            user.favoriteEvents.remove(id)
+            repo.unfavoriteEvent(event: id, fitHubViewModel: self)
+        } else {
+            print("null eventID")
+        }
     }
 }
