@@ -45,7 +45,14 @@ struct EventView: View {
                 }
                 ScrollView {
                     ForEach(fitHubViewModel.eventList.reversed()) {event in
-                        EventCardView(title: event.title, description: event.description, eventCreator: event.eventCreator)
+                        withAnimation {
+                            EventCardView(
+                                fitHubViewModel: fitHubViewModel,
+                                id: event.id,
+                                title: event.title,
+                                description: event.description,
+                                eventCreator: event.eventCreator)
+                        }
                     }
                 }
             }
@@ -83,9 +90,18 @@ struct EventHeader: View {
                 
                 Spacer()
                 Menu(content: {
-                    Button("Sign Out", action: {
+                    Button("My Events") {
+                        fitHubViewModel.getUserEvents(user: fitHubViewModel.user)
+                    }
+                    Button("Favorite Events") {
+                        fitHubViewModel.getFavoriteEvents()
+                    }
+                    Button("All Events") {
+                        fitHubViewModel.getEvents()
+                    }
+                    Button("Sign Out"){
                         fitHubViewModel.loggedIn = false
-                    })
+                    }
                 }, label: {
                     Image(systemName: "person.crop.circle")
                         .resizable()
@@ -102,6 +118,8 @@ struct EventHeader: View {
 }
 
 struct EventCardView: View {
+    @ObservedObject var fitHubViewModel: FitHubViewModel
+    var id: String?
     var title: String
     var description: String
     var eventCreator: String
@@ -132,10 +150,29 @@ struct EventCardView: View {
                         .padding()
                 }
                 if (viewDescription) {
-                    Text(description)
-                        .font(.headline)
-                        .multilineTextAlignment(.leading)
-                        .padding(.leading,5)
+                    HStack {
+                        Text(description)
+                            .font(.headline)
+                            .multilineTextAlignment(.leading)
+                            .padding(.leading,5)
+                        Spacer()
+                        if (!fitHubViewModel.user.favoriteEvents.contains(id!)){
+                            Image(systemName: "star")
+                                .resizable()
+                                .frame(width: 40, height: 40)
+                                .foregroundColor(.pink)
+                                .padding(.horizontal)
+                                .onTapGesture(perform: {fitHubViewModel.favoriteEvent(eventID: id)})
+                        }else {
+                            Image(systemName: "star.fill")
+                                .resizable()
+                                .frame(width: 40, height: 40)
+                                .foregroundColor(.pink)
+                                .padding(.horizontal)
+                                .onTapGesture(perform: {fitHubViewModel.unfavoriteEvent(eventID: id)})
+                        }
+
+                    }
                     Spacer()
                 }
             }

@@ -20,7 +20,7 @@ struct RegisterView: View {
         ZStack {
             Color.white.ignoresSafeArea()
             VStack {
-                fithubLogo()
+                fithubLogo().padding(.top)
                 Spacer()
                 VStack {
                     VStack {
@@ -44,7 +44,7 @@ struct RegisterView: View {
                 }.background(MainView.lightPurple)
                 Spacer()
             }
-            .navigationBarTitle("Register", displayMode: .large)
+            .navigationBarTitle("Register", displayMode: .inline)
         }
     }
 }

@@ -15,4 +15,7 @@ struct UserModel:  Codable {
     var username: String = "Rob"
     var password: String = "pass"
     var interests = Set<String>()
+    
+    //saving Id of events
+    var favoriteEvents = Set<String>()
 }
