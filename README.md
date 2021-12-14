@@ -17,11 +17,12 @@ Working Features:
 -view events (refresh list by tapping on Fithub Logo)  
 -tap event to expand and see event description (toggable)  
 -sign out (tap on top right profile icon)  
+-favorite events  
+-view favorite events seperately  
+-view user's events seperately  
 
 Currently working on:  
--saving events user is interested (personal interested events)  
 -removing events user is not interested in (personal uninterested events to hide)  
--show user's created events  
 -allow user to delete their events  
   
 Upcoming features:  
