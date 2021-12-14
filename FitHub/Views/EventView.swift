@@ -93,6 +93,9 @@ struct EventHeader: View {
                     Button("My Events") {
                         fitHubViewModel.getUserEvents(user: fitHubViewModel.user)
                     }
+                    Button("Favorite Events") {
+                        fitHubViewModel.getFavoriteEvents()
+                    }
                     Button("All Events") {
                         fitHubViewModel.getEvents()
                     }

@@ -140,4 +140,32 @@ class FitHubRepo: ObservableObject {
     func unfavoriteEvent(event: String, fitHubViewModel: FitHubViewModel) {
         db.collection("users").document(fitHubViewModel.user.id!).updateData(["favoriteEvents": FieldValue.arrayRemove([event])])
     }
+    
+    func getFavoriteEvents(fitHubViewModel: FitHubViewModel) {
+        db.collection("events").getDocuments { (snap,err) in
+            if(err != nil){
+                print("failed to login")
+                return
+            }
+            if let acc = snap {
+                for i in acc.documents{
+                    if (fitHubViewModel.user.favoriteEvents.contains(i.documentID)) {
+                        let event = EventModel(
+                            id: i.documentID,
+                            title: i.get("title") as! String,
+                            description: i.get("description") as! String,
+                            eventCreator: i.get("eventCreator") as! String
+                        )
+                        DispatchQueue.main.async {
+                            if (!fitHubViewModel.eventList.contains(event)) {
+                                fitHubViewModel.eventList.append(event)
+                            }
+                        }
+                    }
+                }
+            }else{
+                print("nil result")
+            }
+        }
+    }
 }

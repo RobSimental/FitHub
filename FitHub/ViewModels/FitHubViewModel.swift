@@ -50,10 +50,15 @@ class FitHubViewModel: ObservableObject {
     }
     func unfavoriteEvent(eventID: String?) {
         if let id = eventID {
+            eventList.removeAll(where: {$0.id == id})
             user.favoriteEvents.remove(id)
             repo.unfavoriteEvent(event: id, fitHubViewModel: self)
         } else {
             print("null eventID")
         }
+    }
+    func getFavoriteEvents() {
+        eventList.removeAll()
+        repo.getFavoriteEvents(fitHubViewModel: self)
     }
 }
