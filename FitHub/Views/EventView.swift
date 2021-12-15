@@ -52,7 +52,8 @@ struct EventView: View {
                                     id: event.id,
                                     title: event.title,
                                     description: event.description,
-                                    eventCreator: event.eventCreator)
+                                    eventCreator: event.eventCreator
+                                )
                             }
                         }
                     }
@@ -64,7 +65,6 @@ struct EventView: View {
 
 struct EventHeader: View {
     @ObservedObject var fitHubViewModel: FitHubViewModel
-    //var testEvent =  EventModel(eventCreator: UserModel())
 
     var body: some View {
         ZStack {
@@ -172,28 +172,26 @@ struct EventCardView: View {
                                     .resizable()
                                     .frame(width: 40, height: 40)
                                     .foregroundColor(.pink)
-                                    .padding(.horizontal)
                                     .onTapGesture(perform: {fitHubViewModel.deleteEvent(eventID: id)})
                             } else {
                                 Image(systemName: "x.square.fill")
                                     .resizable()
                                     .frame(width: 40, height: 40)
                                     .foregroundColor(.pink)
-                                    .padding(.horizontal)
                                     .onTapGesture(perform: {fitHubViewModel.blockEvent(eventID: id)})
                             }
                             Image(systemName: "star")
                                 .resizable()
                                 .frame(width: 40, height: 40)
                                 .foregroundColor(.pink)
-                                .padding(.horizontal)
+                                .padding(.trailing)
                                 .onTapGesture(perform: {fitHubViewModel.favoriteEvent(eventID: id)})
                         }else {
                             Image(systemName: "star.fill")
                                 .resizable()
                                 .frame(width: 40, height: 40)
                                 .foregroundColor(.pink)
-                                .padding(.horizontal)
+                                .padding(.trailing)
                                 .onTapGesture(perform: {fitHubViewModel.unfavoriteEvent(eventID: id)})
                         }
 
