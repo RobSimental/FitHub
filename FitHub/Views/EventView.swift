@@ -159,12 +159,21 @@ struct EventCardView: View {
                             .padding(.leading,5)
                         Spacer()
                         if (!fitHubViewModel.user.favoriteEvents.contains(id!)){
-                            Image(systemName: "x.square.fill")
-                                .resizable()
-                                .frame(width: 40, height: 40)
-                                .foregroundColor(.pink)
-                                .padding(.horizontal)
-                                .onTapGesture(perform: {fitHubViewModel.blockEvent(eventID: id)})
+                            if (fitHubViewModel.user.username == eventCreator){
+                                Image(systemName: "trash.fill")
+                                    .resizable()
+                                    .frame(width: 40, height: 40)
+                                    .foregroundColor(.pink)
+                                    .padding(.horizontal)
+                                    .onTapGesture(perform: {fitHubViewModel.deleteEvent(eventID: id)})
+                            } else {
+                                Image(systemName: "x.square.fill")
+                                    .resizable()
+                                    .frame(width: 40, height: 40)
+                                    .foregroundColor(.pink)
+                                    .padding(.horizontal)
+                                    .onTapGesture(perform: {fitHubViewModel.blockEvent(eventID: id)})
+                            }
                             Image(systemName: "star")
                                 .resizable()
                                 .frame(width: 40, height: 40)

@@ -173,4 +173,8 @@ class FitHubRepo: ObservableObject {
     func blockEvent(event: String, fitHubViewModel:FitHubViewModel){
         db.collection("users").document(fitHubViewModel.user.id!).updateData(["blockedEvents": FieldValue.arrayUnion([event])])
     }
+    
+    func deleteEvent(event: String, fitHubViewModel:FitHubViewModel) {
+        db.collection("events").document(event).delete()
+    }
 }
