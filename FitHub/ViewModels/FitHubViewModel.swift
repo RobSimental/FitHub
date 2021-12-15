@@ -61,4 +61,12 @@ class FitHubViewModel: ObservableObject {
         eventList.removeAll()
         repo.getFavoriteEvents(fitHubViewModel: self)
     }
+    func blockEvent(eventID: String?){
+        if let id = eventID {
+            eventList.removeAll(where: {$0.id == id})
+            user.blockedEvents.insert(id)
+            repo.blockEvent(event: id, fitHubViewModel: self)
+        }
+        self.getEvents()
+    }
 }

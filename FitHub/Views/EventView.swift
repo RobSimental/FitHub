@@ -45,13 +45,15 @@ struct EventView: View {
                 }
                 ScrollView {
                     ForEach(fitHubViewModel.eventList.reversed()) {event in
-                        withAnimation {
-                            EventCardView(
-                                fitHubViewModel: fitHubViewModel,
-                                id: event.id,
-                                title: event.title,
-                                description: event.description,
-                                eventCreator: event.eventCreator)
+                        if (!fitHubViewModel.user.blockedEvents.contains(event.id!)){
+                            withAnimation {
+                                EventCardView(
+                                    fitHubViewModel: fitHubViewModel,
+                                    id: event.id,
+                                    title: event.title,
+                                    description: event.description,
+                                    eventCreator: event.eventCreator)
+                            }
                         }
                     }
                 }
@@ -157,6 +159,12 @@ struct EventCardView: View {
                             .padding(.leading,5)
                         Spacer()
                         if (!fitHubViewModel.user.favoriteEvents.contains(id!)){
+                            Image(systemName: "x.square.fill")
+                                .resizable()
+                                .frame(width: 40, height: 40)
+                                .foregroundColor(.pink)
+                                .padding(.horizontal)
+                                .onTapGesture(perform: {fitHubViewModel.blockEvent(eventID: id)})
                             Image(systemName: "star")
                                 .resizable()
                                 .frame(width: 40, height: 40)
