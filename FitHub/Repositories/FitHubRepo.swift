@@ -55,6 +55,7 @@ class FitHubRepo: ObservableObject {
                         fitHubViewModel.user.id = i.documentID
                         fitHubViewModel.user.favoriteEvents.formUnion(i.get("favoriteEvents") as! [String])
                         fitHubViewModel.user.email = i.get("email") as! String
+                        fitHubViewModel.user.blockedEvents.formUnion(i.get("blockedEvents") as! [String])
                         //let intList = i.get("interests") as! [String]
                         fitHubViewModel.selection.formUnion(i.get("interests") as! [String])
                         //this is updating the Main View so that we leave the login screen
@@ -167,5 +168,13 @@ class FitHubRepo: ObservableObject {
                 print("nil result")
             }
         }
+    }
+    
+    func blockEvent(event: String, fitHubViewModel:FitHubViewModel){
+        db.collection("users").document(fitHubViewModel.user.id!).updateData(["blockedEvents": FieldValue.arrayUnion([event])])
+    }
+    
+    func deleteEvent(event: String, fitHubViewModel:FitHubViewModel) {
+        db.collection("events").document(event).delete()
     }
 }

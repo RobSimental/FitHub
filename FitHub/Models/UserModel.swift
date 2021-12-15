@@ -18,4 +18,5 @@ struct UserModel:  Codable {
     
     //saving Id of events
     var favoriteEvents = Set<String>()
+    var blockedEvents = Set<String>()
 }

@@ -50,7 +50,6 @@ class FitHubViewModel: ObservableObject {
     }
     func unfavoriteEvent(eventID: String?) {
         if let id = eventID {
-            eventList.removeAll(where: {$0.id == id})
             user.favoriteEvents.remove(id)
             repo.unfavoriteEvent(event: id, fitHubViewModel: self)
         } else {
@@ -60,5 +59,19 @@ class FitHubViewModel: ObservableObject {
     func getFavoriteEvents() {
         eventList.removeAll()
         repo.getFavoriteEvents(fitHubViewModel: self)
+    }
+    func blockEvent(eventID: String?){
+        if let id = eventID {
+            eventList.removeAll(where: {$0.id == id})
+            user.blockedEvents.insert(id)
+            repo.blockEvent(event: id, fitHubViewModel: self)
+        }
+        self.getEvents()
+    }
+    func deleteEvent(eventID: String?) {
+        if let id = eventID {
+            eventList.removeAll(where: {$0.id == id})
+            repo.deleteEvent(event: id, fitHubViewModel: self)
+        }
     }
 }

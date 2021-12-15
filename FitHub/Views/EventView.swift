@@ -45,13 +45,16 @@ struct EventView: View {
                 }
                 ScrollView {
                     ForEach(fitHubViewModel.eventList.reversed()) {event in
-                        withAnimation {
-                            EventCardView(
-                                fitHubViewModel: fitHubViewModel,
-                                id: event.id,
-                                title: event.title,
-                                description: event.description,
-                                eventCreator: event.eventCreator)
+                        if (!fitHubViewModel.user.blockedEvents.contains(event.id!)){
+                            withAnimation {
+                                EventCardView(
+                                    fitHubViewModel: fitHubViewModel,
+                                    id: event.id,
+                                    title: event.title,
+                                    description: event.description,
+                                    eventCreator: event.eventCreator
+                                )
+                            }
                         }
                     }
                 }
@@ -62,7 +65,6 @@ struct EventView: View {
 
 struct EventHeader: View {
     @ObservedObject var fitHubViewModel: FitHubViewModel
-    //var testEvent =  EventModel(eventCreator: UserModel())
 
     var body: some View {
         ZStack {
@@ -100,6 +102,14 @@ struct EventHeader: View {
                         fitHubViewModel.getEvents()
                     }
                     Button("Sign Out"){
+                        //reset everything except username/password for easy relog
+                        fitHubViewModel.user.blockedEvents.removeAll()
+                        fitHubViewModel.eventList.removeAll()
+                        fitHubViewModel.user.favoriteEvents.removeAll()
+                        fitHubViewModel.selection.removeAll()
+                        fitHubViewModel.user.interests.removeAll()
+                        fitHubViewModel.user.email = ""
+                        fitHubViewModel.createEventView = false
                         fitHubViewModel.loggedIn = false
                     }
                 }, label: {
@@ -157,18 +167,31 @@ struct EventCardView: View {
                             .padding(.leading,5)
                         Spacer()
                         if (!fitHubViewModel.user.favoriteEvents.contains(id!)){
+                            if (fitHubViewModel.user.username == eventCreator){
+                                Image(systemName: "trash.fill")
+                                    .resizable()
+                                    .frame(width: 40, height: 40)
+                                    .foregroundColor(.pink)
+                                    .onTapGesture(perform: {fitHubViewModel.deleteEvent(eventID: id)})
+                            } else {
+                                Image(systemName: "x.square.fill")
+                                    .resizable()
+                                    .frame(width: 40, height: 40)
+                                    .foregroundColor(.pink)
+                                    .onTapGesture(perform: {fitHubViewModel.blockEvent(eventID: id)})
+                            }
                             Image(systemName: "star")
                                 .resizable()
                                 .frame(width: 40, height: 40)
                                 .foregroundColor(.pink)
-                                .padding(.horizontal)
+                                .padding(.trailing)
                                 .onTapGesture(perform: {fitHubViewModel.favoriteEvent(eventID: id)})
                         }else {
                             Image(systemName: "star.fill")
                                 .resizable()
                                 .frame(width: 40, height: 40)
                                 .foregroundColor(.pink)
-                                .padding(.horizontal)
+                                .padding(.trailing)
                                 .onTapGesture(perform: {fitHubViewModel.unfavoriteEvent(eventID: id)})
                         }
 
