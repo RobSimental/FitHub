@@ -17,7 +17,7 @@
 		E11034DD2769A4FF00CADB26 /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = E11034D32769A4FF00CADB26 /* 9.png */; };
 		E11034DE2769A4FF00CADB26 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = E11034D42769A4FF00CADB26 /* 4.png */; };
 		E11034DF2769A4FF00CADB26 /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = E11034D52769A4FF00CADB26 /* 5.png */; };
-		E11034E22769BA1C00CADB26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E11034E12769BA1C00CADB26 /* Assets.xcassets */; };
+		E11034E42769C67E00CADB26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E11034E32769C67E00CADB26 /* Assets.xcassets */; };
 		E13934B3276336D6000465C0 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13934AC276336D6000465C0 /* EventView.swift */; };
 		E13934B4276336D6000465C0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13934AD276336D6000465C0 /* LoginView.swift */; };
 		E13934B5276336D6000465C0 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13934AE276336D6000465C0 /* ViewModifiers.swift */; };
@@ -47,7 +47,7 @@
 		E11034D32769A4FF00CADB26 /* 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 9.png; sourceTree = "<group>"; };
 		E11034D42769A4FF00CADB26 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
 		E11034D52769A4FF00CADB26 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
-		E11034E12769BA1C00CADB26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../Desktop/Assets.xcassets; sourceTree = "<group>"; };
+		E11034E32769C67E00CADB26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E13934AC276336D6000465C0 /* EventView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
 		E13934AD276336D6000465C0 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E13934AE276336D6000465C0 /* ViewModifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
@@ -136,7 +136,7 @@
 				E13934AB276336D6000465C0 /* Views */,
 				E1ED17002738E7FC00BD8980 /* FitHubApp.swift */,
 				E1ED178B273BA67A00BD8980 /* GoogleService-Info.plist */,
-				E11034E12769BA1C00CADB26 /* Assets.xcassets */,
+				E11034E32769C67E00CADB26 /* Assets.xcassets */,
 				E1ED17092738E80E00BD8980 /* Info.plist */,
 				E1ED17062738E80E00BD8980 /* Preview Content */,
 			);
@@ -244,9 +244,9 @@
 				E1ED17082738E80E00BD8980 /* Preview Assets.xcassets in Resources */,
 				E11034D62769A4FF00CADB26 /* 6.png in Resources */,
 				E11034DE2769A4FF00CADB26 /* 4.png in Resources */,
-				E11034E22769BA1C00CADB26 /* Assets.xcassets in Resources */,
 				E11034D92769A4FF00CADB26 /* 2.png in Resources */,
 				E11034DF2769A4FF00CADB26 /* 5.png in Resources */,
+				E11034E42769C67E00CADB26 /* Assets.xcassets in Resources */,
 				E11034DB2769A4FF00CADB26 /* 7.png in Resources */,
 				E11034DD2769A4FF00CADB26 /* 9.png in Resources */,
 				E11034DC2769A4FF00CADB26 /* 10.png in Resources */,
