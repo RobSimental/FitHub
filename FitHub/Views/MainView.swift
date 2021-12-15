@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     static let lightPurple = Color(red: 76/255, green: 76/255, blue: 109/255, opacity: 1)
-    static let fhPurple = Color("fhPurple")
+//    static let fhPurple = Color("fhPurple")
     
     @ObservedObject var fitHubViewModel: FitHubViewModel
 

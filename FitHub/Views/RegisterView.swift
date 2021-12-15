@@ -34,7 +34,7 @@ struct RegisterView: View {
 //                        SecureField ("Confirm Password", text: $fithubViewModel.user.cpassword)
 //                            .inputTextBoxStyle()
                         NavigationLink(destination: InterestsView(fithubViewModel: fithubViewModel)) {
-                            Text("SELECT INTERESTS").loginButtonStyle(color: MainView.fhPurple)
+                            Text("SELECT INTERESTS").loginButtonStyle(color: .pink)
                         }
                         Button(action: {fithubViewModel.register()}){
                             Text("Sign Up").loginButtonStyle(color: .green)
