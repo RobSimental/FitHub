@@ -25,7 +25,7 @@
 		E13934B8276336D6000465C0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13934B1276336D6000465C0 /* MainView.swift */; };
 		E13934B9276336D6000465C0 /* InterestsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13934B2276336D6000465C0 /* InterestsView.swift */; };
 		E13934BB2763373B000465C0 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13934BA2763373B000465C0 /* EventModel.swift */; };
-		E193EA5C2769CFD4008F6612 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E193EA5B2769CFD4008F6612 /* Images.xcassets */; };
+		E193EA602769D4C5008F6612 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E193EA5F2769D4C4008F6612 /* Images.xcassets */; };
 		E1ED17012738E7FC00BD8980 /* FitHubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ED17002738E7FC00BD8980 /* FitHubApp.swift */; };
 		E1ED17082738E80E00BD8980 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1ED17072738E80E00BD8980 /* Preview Assets.xcassets */; };
 		E1ED1733273B7DC000BD8980 /* FitHubViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ED1732273B7DC000BD8980 /* FitHubViewModel.swift */; };
@@ -55,7 +55,7 @@
 		E13934B1276336D6000465C0 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		E13934B2276336D6000465C0 /* InterestsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterestsView.swift; sourceTree = "<group>"; };
 		E13934BA2763373B000465C0 /* EventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
-		E193EA5B2769CFD4008F6612 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E193EA5F2769D4C4008F6612 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E1ED16FD2738E7FC00BD8980 /* FitHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1ED17002738E7FC00BD8980 /* FitHubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitHubApp.swift; sourceTree = "<group>"; };
 		E1ED17072738E80E00BD8980 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -129,6 +129,7 @@
 		E1ED16FF2738E7FC00BD8980 /* FitHub */ = {
 			isa = PBXGroup;
 			children = (
+				E193EA5F2769D4C4008F6612 /* Images.xcassets */,
 				E11034CB2769A4FF00CADB26 /* Screenshots */,
 				E1ED179C273CD43300BD8980 /* Repositories */,
 				E1ED179B273CD42800BD8980 /* ViewModels */,
@@ -136,7 +137,6 @@
 				E13934AB276336D6000465C0 /* Views */,
 				E1ED17002738E7FC00BD8980 /* FitHubApp.swift */,
 				E1ED178B273BA67A00BD8980 /* GoogleService-Info.plist */,
-				E193EA5B2769CFD4008F6612 /* Images.xcassets */,
 				E1ED17092738E80E00BD8980 /* Info.plist */,
 				E1ED17062738E80E00BD8980 /* Preview Content */,
 			);
@@ -243,12 +243,12 @@
 				E1ED178C273BA67A00BD8980 /* GoogleService-Info.plist in Resources */,
 				E1ED17082738E80E00BD8980 /* Preview Assets.xcassets in Resources */,
 				E11034D62769A4FF00CADB26 /* 6.png in Resources */,
+				E193EA602769D4C5008F6612 /* Images.xcassets in Resources */,
 				E11034DE2769A4FF00CADB26 /* 4.png in Resources */,
 				E11034D92769A4FF00CADB26 /* 2.png in Resources */,
 				E11034DF2769A4FF00CADB26 /* 5.png in Resources */,
 				E11034DB2769A4FF00CADB26 /* 7.png in Resources */,
 				E11034DD2769A4FF00CADB26 /* 9.png in Resources */,
-				E193EA5C2769CFD4008F6612 /* Images.xcassets in Resources */,
 				E11034DC2769A4FF00CADB26 /* 10.png in Resources */,
 				E11034D82769A4FF00CADB26 /* 8.png in Resources */,
 				E11034DA2769A4FF00CADB26 /* 1.png in Resources */,
