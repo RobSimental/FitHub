@@ -20,10 +20,18 @@ Working Features:
 -favorite events  
 -view favorite events seperately  
 -view user's events seperately  
-
-Currently working on:  
 -removing events user is not interested in (personal uninterested events to hide)  
 -allow user to delete their events  
+
+Sample Slides  
+<img src="https://github.com/RobSimental/FitHub/blob/main/FitHub/Screenshots/1.png" alt="" width="200"/>
+<img src="https://github.com/RobSimental/FitHub/blob/main/FitHub/Screenshots/2.png" alt="" width="200"/>
+<img src="https://github.com/RobSimental/FitHub/blob/main/FitHub/Screenshots/3.png" alt="" width="200"/>
+<img src="https://github.com/RobSimental/FitHub/blob/main/FitHub/Screenshots/4.png" alt="" width="200"/>
+<img src="https://github.com/RobSimental/FitHub/blob/main/FitHub/Screenshots/5.png" alt="" width="200"/>
+<img src="https://github.com/RobSimental/FitHub/blob/main/FitHub/Screenshots/6.png" alt="" width="200"/>
+<img src="https://github.com/RobSimental/FitHub/blob/main/FitHub/Screenshots/7.png" alt="" width="200"/>
+<img src="https://github.com/RobSimental/FitHub/blob/main/FitHub/Screenshots/8.png" alt="" width="200"/>
   
 Upcoming features:  
 -update user profile  
