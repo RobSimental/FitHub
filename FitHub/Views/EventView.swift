@@ -102,6 +102,14 @@ struct EventHeader: View {
                         fitHubViewModel.getEvents()
                     }
                     Button("Sign Out"){
+                        //reset everything except username/password for easy relog
+                        fitHubViewModel.user.blockedEvents.removeAll()
+                        fitHubViewModel.eventList.removeAll()
+                        fitHubViewModel.user.favoriteEvents.removeAll()
+                        fitHubViewModel.selection.removeAll()
+                        fitHubViewModel.user.interests.removeAll()
+                        fitHubViewModel.user.email = ""
+                        fitHubViewModel.createEventView = false
                         fitHubViewModel.loggedIn = false
                     }
                 }, label: {
